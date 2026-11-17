@@ -1,0 +1,31 @@
+[general]
+name=Easy Drone Mapping
+qgisMinimumVersion=3.34
+qgisMaximumVersion=3.99
+description=Turn drone photos into an orthophoto, DSM/DTM elevation models and a point cloud using the free, open-source OpenDroneMap software, in four simple steps, without leaving QGIS.
+about=Pick a folder of drone photos, tick what you want, click Process. The plugin shows the expected processing time, runs the job in the background while you keep working, and loads the styled results (orthophoto, DSM, DTM, point cloud) into your project. Everything runs on your own computer; photos never leave it. External dependency: the processing is done by OpenDroneMap software (AGPL v3), which the plugin does not include. On Windows the plugin offers to download the official OpenDroneMap installer (about 234 MB, from github.com/OpenDroneMap/ODM/releases) on first use and installs it for the current user, without administrator rights; it then runs as a separate program. On macOS and Linux, install Docker; the plugin then starts a NodeODM engine in Docker for you. A NodeODM engine on another computer can be used instead. This plugin is an independent project and is not affiliated with or endorsed by OpenDroneMap.
+version=1.2.1
+author=Lincoln Jordaan
+email=lincolnjordaan761@gmail.com
+homepage=https://github.blesdmm.dns-dynamic.net/LincolnJordaan28/easy-drone-mapping
+tracker=https://github.blesdmm.dns-dynamic.net/LincolnJordaan28/easy-drone-mapping/issues
+repository=https://github.blesdmm.dns-dynamic.net/LincolnJordaan28/easy-drone-mapping
+category=Raster
+tags=drone,uav,photogrammetry,odm,opendronemap,orthophoto,dem,dsm,dtm,point cloud
+icon=icon.svg
+experimental=True
+deprecated=False
+hasProcessingProvider=no
+changelog=1.2.1 - Renamed to Easy Drone Mapping; metadata prepared for the QGIS plugin repository.
+  1.2.0 - Time estimate before you start (learns your computer's pace) and time left while running; offers to free memory first; the 3D point cloud steps use more cores when memory allows.
+  1.1.9 - Progress bar now advances steadily within each step instead of jumping.
+  1.1.8 - PDF quality report is now optional (off by default, saves time); low disk space warning before starting.
+  1.1.7 - Built-in engine: report diagrams no longer need a window toolkit (failed when another Python is installed); a failed PDF report no longer fails the job; terrain model can be added to a finished run.
+  1.1.6 - Built-in engine: folders with spaces in their path now work (terrain model failed before); Resume redoes only the affected steps.
+  1.1.5 - Built-in engine: limits parallel work to the free memory; Resume uses the current settings; clearer out-of-memory advice.
+  1.1.4 - Built-in engine: OpenDroneMap no longer picks up compiled modules from another Python registered on the computer; fuller crash reports.
+  1.1.3 - Built-in engine: gives OpenDroneMap a new enough Visual C++ runtime when Windows' own is too old; recognises crashes at start-up and reports where they happen.
+  1.1.2 - Built-in engine: QGIS's Python settings (PYTHONEXECUTABLE and similar) no longer reach OpenDroneMap; fallback start method; start-up probe in the log.
+  1.1.1 - Built-in engine checks and repairs its OpenDroneMap install before each job; clean replacement of an earlier copy.
+  1.1.0 - Built-in engine: OpenDroneMap is installed and run from inside QGIS on Windows, no Docker needed.
+  1.0.0 - First version.
